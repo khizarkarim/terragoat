@@ -19,3 +19,4 @@ jobs:
       uses: bridgecrewio/bridgecrew-action@master 
       with:
         api-key: ${{ secrets.BRIDGECREW_API_KEY }}
+        check: CKV_AWS_135
