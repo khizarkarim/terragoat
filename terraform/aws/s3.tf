@@ -47,11 +47,19 @@ resource "aws_s3_bucket" "financials" {
   bucket        = "${local.resource_prefix.value}-financials"
   acl           = "private"
   force_destroy = true
-  
+
   tags = {
-    Name        = "${local.resource_prefix.value}-financials"
-    Environment = local.resource_prefix.value
-    }
+    Name                 = "${local.resource_prefix.value}-financials"
+    Environment          = local.resource_prefix.value
+    git_commit           = "72d7636f163a568da96db140b066ae193b991906"
+    git_file             = "terraform/aws/s3.tf"
+    git_last_modified_at = "2021-12-27 23:48:19"
+    git_last_modified_by = "kkarim@paloaltonetworks.com"
+    git_modifiers        = "kkarim/nimrodkor"
+    git_org              = "khizarkarim"
+    git_repo             = "terragoat"
+    yor_trace            = "3ec10def-3ac8-44df-a193-4350e3485de8"
+  }
 }
 
 resource "aws_s3_bucket" "operations" {
