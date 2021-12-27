@@ -16,7 +16,8 @@ jobs:
 
     - name: Run Bridgecrew 
       id: Bridgecrew
-      uses: bridgecrewio/bridgecrew-action@master 
+      uses: khizarkarim/bridgecrew-action@master 
       with:
         api-key: ${{ secrets.BRIDGECREW_API_KEY }}
         check: CKV_AWS_135
+        output_bc_ids: true
