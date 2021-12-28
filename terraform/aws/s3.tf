@@ -10,12 +10,12 @@ resource "aws_s3_bucket" "data" {
     Name        = "kkarimworkshopbc"
     Environment = local.resource_prefix.value
     }, {
-    git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
+    git_commit           = "6d82840ce8c319485d3b713841ca2edfc94486bc"
     git_file             = "terraform/aws/s3.tf"
-    git_last_modified_at = "2020-06-16 14:46:24"
-    git_last_modified_by = "nimrodkor@gmail.com"
-    git_modifiers        = "nimrodkor"
-    git_org              = "bridgecrewio"
+    git_last_modified_at = "2021-12-28 00:08:14"
+    git_last_modified_by = "kkarim@paloaltonetworks.com"
+    git_modifiers        = "kkarim/nimrodkor"
+    git_org              = "khizarkarim"
     git_repo             = "terragoat"
     yor_trace            = "0874007d-903a-4b4c-945f-c9c233e13243"
   })
