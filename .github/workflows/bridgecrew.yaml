@@ -19,5 +19,3 @@ jobs:
       uses: khizarkarim/bridgecrew-action@master 
       with:
         api-key: ${{ secrets.BRIDGECREW_API_KEY }}
-        check: BC_AWS_135
-        output_bc_ids: true
