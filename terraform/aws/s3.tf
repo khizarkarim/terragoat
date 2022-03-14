@@ -4,7 +4,6 @@ resource "aws_s3_bucket" "data" {
   # bucket does not have access logs
   # bucket does not have versioning
   bucket        = "kkarimworkshopbc"
-  acl           = "public-read"
   force_destroy = true
   tags = merge({
     Name        = "kkarimworkshopbc"
@@ -19,6 +18,16 @@ resource "aws_s3_bucket" "data" {
     git_repo             = "terragoat"
     yor_trace            = "0874007d-903a-4b4c-945f-c9c233e13243"
   })
+  server_side_encryption_configuration {
+    rule {
+      apply_server_side_encryption_by_default {
+        sse_algorithm = "aws:kms"
+      }
+    }
+  }
+  versioning {
+    enabled = true
+  }
 }
 
 resource "aws_s3_bucket_object" "data_object" {
@@ -60,6 +69,16 @@ resource "aws_s3_bucket" "financials" {
     git_repo             = "terragoat"
     yor_trace            = "3ec10def-3ac8-44df-a193-4350e3485de8"
   }
+  server_side_encryption_configuration {
+    rule {
+      apply_server_side_encryption_by_default {
+        sse_algorithm = "aws:kms"
+      }
+    }
+  }
+  versioning {
+    enabled = true
+  }
 }
 
 resource "aws_s3_bucket" "operations" {
@@ -85,6 +104,13 @@ resource "aws_s3_bucket" "operations" {
     yor_trace            = "29efcf7b-22a8-4bd6-8e14-1f55b3a2d743"
   })
 
+  server_side_encryption_configuration {
+    rule {
+      apply_server_side_encryption_by_default {
+        sse_algorithm = "AES256"
+      }
+    }
+  }
 }
 
 resource "aws_s3_bucket" "data_science" {
@@ -111,7 +137,7 @@ resource "aws_s3_bucket" "data_science" {
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
-        sse_algorithm = "AES256"
+        sse_algorithm = "aws:kms"
       }
     }
   }
