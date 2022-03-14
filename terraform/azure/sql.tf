@@ -38,7 +38,7 @@ resource "azurerm_mssql_server_security_alert_policy" "example" {
     "Sql_Injection",
     "Data_Exfiltration"
   ]
-  retention_days = 20
+  retention_days       = 20
   email_account_admins = true
 }
 
@@ -102,7 +102,7 @@ resource "azurerm_postgresql_server" "example" {
   threat_detection_policy {
     enabled = true
   }
-  public_network_access_enabled = false
+  public_network_access_enabled     = false
   infrastructure_encryption_enabled = true
 }
 
