@@ -17,6 +17,7 @@ jobs:
       uses: khizarkarim/bridgecrew-action@master
       with:
         api-key: ${{ secrets.BRIDGECREW_API_KEY }}
+        soft_fail: true
     - name: Expose report
       uses: actions/upload-artifact@v2
       with:
