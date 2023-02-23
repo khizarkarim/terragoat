@@ -6,7 +6,7 @@ param PRISMA_SECRET_KEY
 
 loginReq = http.request("https://api.prismacloud.io/login").with_body(json.marshal({"username": PRISMA_ACCESS_KEY, "password": PRISMA_SECRET_KEY})).with_header("Content-Type", "application/json")
 loginResp = json.unmarshal(http.post(loginReq).body)
-req = http.request("https://api.prismacloud.io/bridgecrew/api/v1/tfCloud/sentinel/ws-9y7fRKPHhvSu33RG").with_header("Authorization", loginResp.token)
+req = http.request("https://api.prismacloud.io/bridgecrew/api/v1/tfCloud/sentinel/ws-6MXgx5YWhZug7FjC").with_header("Authorization", loginResp.token)
 resp = json.unmarshal(http.get(req).body)
 if (length(resp.violations) > 0) {
     print("Violations:\n")
