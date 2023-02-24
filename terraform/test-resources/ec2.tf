@@ -39,6 +39,8 @@ resource "aws_instance" "web_server_instance" {
     git_repo             = "terragoat"
     yor_trace            = "4e690a72-d5dc-4a2e-b8a4-d1eddf377525"
   }
+  monitoring    = true
+  ebs_optimized = true
 }
 
 data "aws_ami" "ubuntu" {

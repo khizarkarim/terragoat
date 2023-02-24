@@ -12,15 +12,18 @@ resource azurerm_kubernetes_cluster "k8s_cluster" {
     node_count = 2
   }
   addon_profile {
+    azure_policy {
+      enabled = true
+    }
     oms_agent {
-      enabled = false
+      enabled = true
     }
     kube_dashboard {
       enabled = true
     }
   }
   role_based_access_control {
-    enabled = false
+    enabled = true
   }
   tags = {
     git_commit           = "898d5beaec7ffdef6df0d7abecff407362e2a74e"
@@ -32,4 +35,5 @@ resource azurerm_kubernetes_cluster "k8s_cluster" {
     git_repo             = "terragoat"
     yor_trace            = "6103d111-864e-42e5-899c-1864de281fd1"
   }
+  private_cluster_enabled = true
 }
