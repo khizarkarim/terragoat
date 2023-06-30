@@ -21,6 +21,7 @@ resource "aws_security_group" "ssh_traffic" {
     git_org              = "khizarkarim"
     git_repo             = "terragoat"
     yor_trace            = "685f143b-f9b4-48aa-ad1a-ef152a6384c2"
+    user                 = "pchandaliya"
   }
 }
 
@@ -38,6 +39,7 @@ resource "aws_instance" "web_server_instance" {
     git_org              = "khizarkarim"
     git_repo             = "terragoat"
     yor_trace            = "4e690a72-d5dc-4a2e-b8a4-d1eddf377525"
+    user                 = "pchandaliya"
   }
 }
 
