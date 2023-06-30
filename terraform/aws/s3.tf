@@ -21,6 +21,8 @@ resource "aws_s3_bucket" "data" {
     this_is              = "a-test"
     }, {
     user = "pchandaliya"
+    }, {
+    yor_name = "data"
   })
 }
 
@@ -42,6 +44,8 @@ resource "aws_s3_bucket_object" "data_object" {
     yor_trace            = "a7f01cc7-63c2-41a8-8555-6665e5e39a64"
     }, {
     user = "pchandaliya"
+    }, {
+    yor_name = "data_object"
   })
 }
 
@@ -65,6 +69,7 @@ resource "aws_s3_bucket" "financials" {
     git_repo             = "terragoat"
     yor_trace            = "3ec10def-3ac8-44df-a193-4350e3485de8"
     user                 = "pchandaliya"
+    yor_name             = "financials"
   }
 }
 
@@ -91,6 +96,8 @@ resource "aws_s3_bucket" "operations" {
     yor_trace            = "29efcf7b-22a8-4bd6-8e14-1f55b3a2d743"
     }, {
     user = "pchandaliya"
+    }, {
+    yor_name = "operations"
   })
 
 }
@@ -116,6 +123,7 @@ resource "aws_s3_bucket" "data_science" {
     git_repo             = "terragoat"
     yor_trace            = "9a7c8788-5655-4708-bbc3-64ead9847f64"
     user                 = "pchandaliya"
+    yor_name             = "data_science"
   }
   server_side_encryption_configuration {
     rule {
@@ -156,5 +164,7 @@ resource "aws_s3_bucket" "logs" {
     yor_trace            = "01946fe9-aae2-4c99-a975-e9b0d3a4696c"
     }, {
     user = "pchandaliya"
+    }, {
+    yor_name = "logs"
   })
 }
