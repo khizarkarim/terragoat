@@ -8,6 +8,12 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+      - name: Prevent file change
+        uses: xalvarez/prevent-file-change-action@v1
+        with:
+          # githubToken: ${{ secrets.GITHUB_TOKEN }}
+          pattern: terraform/aws/s3.tf
+          # trustedAuthors: xalvarez
 
       - name: Run Checkov action
         id: checkov
